@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBorder"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:background="@drawable/bordertop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/orderSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBorder">
+
+        <TextView
+            android:id="@+id/orderSection"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/chakra_petch_semibold"
+            android:gravity="center|start"
+            android:paddingStart="15dp"
+            android:text="@string/admin_button"
+            android:textColor="@color/text_gray"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/reportsButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/reportsButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/account_borders"
+            android:drawableStart="@drawable/ic_admin"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/arvo"
+            android:gravity="center|start"
+            android:text="@string/reports"
+            android:textColor="@color/text_gray"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/manageOffers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderSection" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/manageOffers"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/account_borders"
+            android:drawableStart="@drawable/ic_admin"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/arvo"
+            android:gravity="center|start"
+            android:text="@string/manage_offer"
+            android:textColor="@color/text_gray"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/manageOrders"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reportsButton" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/manageOrders"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/account_borders"
+            android:drawableStart="@drawable/ic_admin"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/arvo"
+            android:gravity="center|start"
+            android:text="@string/manage_orders"
+            android:textColor="@color/text_gray"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/manageUsers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/manageOffers" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/manageUsers"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/account_borders"
+            android:drawableStart="@drawable/ic_admin"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/arvo"
+            android:gravity="center|start"
+            android:text="@string/manage_users"
+            android:textColor="@color/text_gray"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/manageOrders" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/arvo</item>
+        <item>@font/chakra_petch_bold</item>
+        <item>@font/chakra_petch_semibold</item>
+        <item>@font/fredoka_one</item>
+        <item>@font/russo_one</item>
+        <item>@font/sora_light</item>
+        <item>@font/sora_semibold</item>
+    </array>
+</resources>

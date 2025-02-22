@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context=".Account">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/accountback"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/accounttop"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="@drawable/bordertop"
+            app:layout_constraintBottom_toTopOf="@id/accountbottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/topRight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <io.getstream.avatarview.AvatarView
+                    android:id="@+id/profileIcon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:scaleType="fitCenter"
+                    app:avatarViewBorderWidth="3dp"
+                    app:avatarViewIndicatorBorderColor="@color/gray"
+                    app:avatarViewIndicatorBorderSizeCriteria="5"
+                    app:avatarViewInitialsBackgroundColor="@color/white"
+                    app:avatarViewInitialsTextStyle="bold"
+                    app:avatarViewShape="rounded_rect"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topRight"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/topLeft"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.50">
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:autoSizeMaxTextSize="34sp"
+                    android:autoSizeMinTextSize="15sp"
+                    android:autoSizePresetSizes="25sp"
+                    android:autoSizeTextType="none"
+                    android:fontFamily="@font/chakra_petch_bold"
+                    android:gravity="center|start"
+                    android:text="@string/account_name"
+                    android:textColor="@color/text_white"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@+id/userBall"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/userBall"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/chakra_petch_medium"
+                    android:gravity="center|start"
+                    android:text="@string/account_ballance"
+                    android:textColor="#DCDDDDDD"
+                    android:textSize="16sp"
+                    app:drawableStartCompat="@drawable/ic_money"
+                    app:drawableTint="@color/text_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userName" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/accountbottom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/accounttop">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="4dp"
+                android:contentDescription="@string/account_settings"
+                android:fillViewport="true"
+                android:scrollbarSize="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:scrollbarSize="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/orderSettings"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toTopOf="@+id/defaultSettings"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/orderSection"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/chakra_petch_semibold"
+                                android:gravity="center|start"
+                                android:paddingStart="15dp"
+                                android:text="@string/account_order_label"
+                                android:textColor="@color/text_gray"
+                                android:textSize="24sp"
+                                app:layout_constraintBottom_toTopOf="@+id/editMyOrders"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/editMyOrders"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/account_borders"
+                                android:drawableStart="@drawable/ic_work"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/arvo"
+                                android:gravity="center|start"
+                                android:text="@string/account_myorder_label"
+                                android:textColor="@color/text_gray"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toTopOf="@+id/editBoughtOrders"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/orderSection" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/editBoughtOrders"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/account_borders"
+                                android:drawableStart="@drawable/ic_list"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/arvo"
+                                android:gravity="center|start"
+                                android:text="@string/account_buyorder_label"
+                                android:textColor="@color/text_gray"
+                                android:textSize="16sp"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toTopOf="@+id/createOrder"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/editMyOrders" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/createOrder"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/account_borders"
+                                android:drawableStart="@drawable/ic_doc"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/arvo"
+                                android:gravity="center|start"
+                                android:text="@string/account_create_offer"
+                                android:textColor="@color/text_gray"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toTopOf="@+id/notifications"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/editBoughtOrders" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/notifications"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/account_borders"
+                                android:drawableStart="@drawable/ic_notifications"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/arvo"
+                                android:gravity="center|start"
+                                android:text="@string/notification"
+                                android:textColor="@color/text_gray"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toTopOf="@+id/deliveries"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/createOrder" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/deliveries"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/account_borders"
+                                android:drawableStart="@drawable/ic_attachment"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/arvo"
+                                android:gravity="center|start"
+                                android:text="@string/deliveries"
+                                android:textColor="@color/text_gray"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toTopOf="@+id/chats"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/notifications" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/chats"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="4dp"
+                                android:background="@drawable/account_borders"
+                                android:drawableStart="@drawable/ic_chat"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/arvo"
+                                android:gravity="center|start"
+                                android:text="@string/chats"
+                                android:textColor="@color/text_gray"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/deliveries" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/defaultSettings"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/orderSettings">
+
+                            <TextView
+                                android:id="@+id/userSection"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/chakra_petch_semibold"
+                                android:gravity="center|start"
+                                android:paddingStart="15dp"
+                                android:text="@string/account_settings_label"
+                                android:textColor="@color/text_gray"
+                                android:textSize="24sp"
+                                app:layout_constraintBottom_toTopOf="@+id/adminButton"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/adminButton"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/account_borders"
+                                android:drawableStart="@drawable/ic_admin"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/arvo"
+                                android:gravity="center|start"
+                                android:text="@string/admin_button"
+                                android:textColor="@color/text_gray"
+                                android:textSize="16sp"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toTopOf="@+id/editAccountButton"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/userSection" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/editAccountButton"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/account_borders"
+                                android:drawableStart="@drawable/ic_email"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/arvo"
+                                android:gravity="center|start"
+                                android:text="@string/account_personal_detail"
+                                android:textColor="@color/text_gray"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toTopOf="@+id/walletButton"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/adminButton" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/walletButton"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/account_borders"
+                                android:drawableStart="@drawable/ic_wallet"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/arvo"
+                                android:gravity="center|start"
+                                android:text="@string/account_wallet_label"
+                                android:textColor="@color/text_gray"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toTopOf="@+id/editAccountPassword"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/editAccountButton" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/editAccountPassword"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/account_borders"
+                                android:drawableStart="@drawable/ic_key"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/arvo"
+                                android:gravity="center|start"
+                                android:text="@string/account_personal_password"
+                                android:textColor="@color/text_gray"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toTopOf="@+id/editAccountImage"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/walletButton" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/editAccountImage"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/account_borders"
+                                android:drawableStart="@drawable/ic_image"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/arvo"
+                                android:gravity="center|start"
+                                android:text="@string/account_image_placeholder"
+                                android:textColor="@color/text_gray"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toTopOf="@+id/contactSupport"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/editAccountPassword" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/contactSupport"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/account_borders"
+                                android:drawableStart="@drawable/ic_support"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/arvo"
+                                android:gravity="center|start"
+                                android:text="@string/contact_support"
+                                android:textColor="@color/text_gray"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toTopOf="@+id/editAccountLogout"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/editAccountImage" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/editAccountLogout"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/account_borders"
+                                android:drawableStart="@drawable/ic_logout"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/arvo"
+                                android:gravity="center|start"
+                                android:text="@string/logout"
+                                android:textColor="@color/text_gray"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/contactSupport" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
